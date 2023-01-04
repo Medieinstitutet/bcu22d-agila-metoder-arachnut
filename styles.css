@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+background-color: lightskyblue;
+}
+
+.paddle {
+position: absolute;
+background-color: white;
+height: 10vh;
+width: 1vw;
+}
+
+.paddle.Right {
+right: 1vw;
+}
+
+.paddle.Left {
+left: 1vw;
+}

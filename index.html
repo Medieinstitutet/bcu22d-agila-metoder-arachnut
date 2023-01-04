@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ping Pong!</title>
-    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="./script.js" type="module"></script>
 </head>
 <body>
-    <div id="playerScore"></div>
-    <div id="computerScore"></div>
+    <div id="score">
+    <div id="playerScore">0</div>
+    <div id="computerScore">0</div>
+    </div>
     <div id="ball"></div>
-    <div id="playerPadell"></div>
-    <div id="computerPadell"></div>
+    <div class="paddle Left" id="playerPadell"></div>
+    <div class="paddle Right" id="computerPadell"></div>
 </body>
 </html>
