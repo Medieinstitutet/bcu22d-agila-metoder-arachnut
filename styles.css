@@ -33,7 +33,7 @@ right: 1vw;
 left: 1vw;
 }
 
-#ball {
+.ball {
     --x: 50;
     --y: 50;
 
@@ -45,4 +45,24 @@ left: 1vw;
     top: calc(var(--y)* 1vh);
     transform: translateY(-50%, -50%);
     border-radius: 50%;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 7vh;
+    color: var(--forground-color);
+}
+
+.score > * {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0 2vh;
+    margin: 1vh 0;
+    opacity: .5;
+}
+
+.score > :first-child {
+    text-align: right;
 }
