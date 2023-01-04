@@ -9,10 +9,13 @@ background-color: lightskyblue;
 }
 
 .paddle {
+--position: 50;
 position: absolute;
 background-color: white;
 height: 10vh;
 width: 1vh;
+top: calc(var(--position)* 1vh);
+transform: translateY(-50%);
 }
 
 .paddle.Right {
