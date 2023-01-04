@@ -4,14 +4,21 @@
     box-sizing: border-box;
 }
 
+:root {
+    --hue: 200;
+    --saturation: 50%;
+    --forground-color: hsl(var(--hue), var(--saturation), 75%);
+    --background-color: hsl(var(--hue), var(--saturation), 20%);
+}
+
 body {
-background-color: lightskyblue;
+background-color: var(--background-color);
 }
 
 .paddle {
 --position: 50;
 position: absolute;
-background-color: white;
+background-color: var(--forground-color);
 height: 10vh;
 width: 1vh;
 top: calc(var(--position)* 1vh);
@@ -24,4 +31,17 @@ right: 1vw;
 
 .paddle.Left {
 left: 1vw;
+}
+
+#ball {
+    --x: 50;
+    --y: 50;
+
+    position: absolute;
+    background-color: var(--forground-color);
+    height: 2.5vh;
+    width: 2.5vh;
+    left: calc(var(--x)* 1vw);
+    top: calc(var(--y)* 1vh);
+    transform: translateY(-50%, -50%);
 }
