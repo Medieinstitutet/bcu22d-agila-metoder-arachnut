@@ -44,4 +44,5 @@ left: 1vw;
     left: calc(var(--x)* 1vw);
     top: calc(var(--y)* 1vh);
     transform: translateY(-50%, -50%);
+    border-radius: 50%;
 }
