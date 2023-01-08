@@ -21,6 +21,7 @@ position: absolute;
 background-color: var(--forground-color);
 height: 10vh;
 width: 1vh;
+top: 0;
 top: calc(var(--position)* 1vh);
 transform: translateY(-50%);
 }
