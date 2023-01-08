@@ -15,4 +15,9 @@
  Remove scroll when ball/paddle goes outside of screen
 
 - Vi kom överens om att ta in featuren 2 player;
+- Vi siktar på att arbeta lite mer enligt scrum metoden nästa vecka.    
+    Scrum roller
+    standups 
+    (Vad har jag gjort sedan igår? Vad ska jag åstadkomma till imorgon Vad hindrar mig?)
+    + uppdelning utav arbetet så vi lär oss push requests och issues istället för parkodning.
 - Vi har uppskattat att uppgifterna var lite för enkla; därför har vi valt att prioritera att göra ett lite svårare projekt tills nästa vecka. 
