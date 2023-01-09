@@ -6,6 +6,7 @@ import Racket from "./gameFiles/racket.js";
 
 const playerOneRacket = new Racket(document.getElementById("playerOnePadell"))
 const playerTwoRacket = new Racket(document.getElementById("playerTwoPadell"))
+const ball = new Ball(document.getElementById("ball"))
 
 document.addEventListener(("mousemove"), e => {
     playerOneRacket.position = e.y / window.innerHeight * 100
@@ -34,10 +35,20 @@ function update(time) {
         /* console.log(delta) */
         /* console.log(time) */
     }
-    
     lastTime = time
     window.requestAnimationFrame(update)
 } 
+
+function drawBall() {
+    // drawing code
+
+    // if close to racket
+
+    // if close to canvas
+    ball.positionX -= 3
+    ball.positionY -= 3
+  }
+setInterval(drawBall, 10);
 
 window.requestAnimationFrame(update)
 
