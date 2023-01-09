@@ -21,7 +21,7 @@ document.addEventListener("keydown", (e) => {
             break
         case "s":
         case "ArrowDown":
-            console.log ("down", e.key);
+            //console.log ("down", e.key);
             playerTwoRacket.position += 5
             break
     }
