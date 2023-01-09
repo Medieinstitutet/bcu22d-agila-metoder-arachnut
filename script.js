@@ -12,17 +12,17 @@ document.addEventListener(("mousemove"), e => {
 })
 
 document.addEventListener("keydown", (e) => {
-    console.log ("event", e.key);
+    //console.log ("event", e.key);
     switch (e.key) {
         case "w":
         case "ArrowUp":
-            top += 5;
-            playerTwoRacket.position = top + "px";
+            //console.log ("up", e.key);
+            playerTwoRacket.position -= 5
             break
         case "s":
         case "ArrowDown":
-            top -= 5;
-            playerTwoRacket.style.top -= top + "px";
+            console.log ("down", e.key);
+            playerTwoRacket.position += 5
             break
     }
 })

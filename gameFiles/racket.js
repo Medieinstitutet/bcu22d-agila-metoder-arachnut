@@ -5,7 +5,7 @@ export default class Racket {
 
 
     get position() {
-        return parseFloat(getComputedStyle(this.racketElement).getPropertyValue("--postition"))
+        return parseFloat(getComputedStyle(this.racketElement).getPropertyValue("--position"))
     }
 
     set position(value) {
