@@ -1,43 +1,44 @@
-import Ball from "./gameFiles/ball.js";
-import Racket from "./gameFiles/racket.js";
+import Ball from "./gamefiles/ball.js"
+import Racket from "./gamefiles/racket.js"
 
+const ball = new Ball(document.getElementById("ball"))
+const playerOneRacket = new Racket(document.getElementById("playerOneRacket"))
+const playerTwoRacket = new Racket(document.getElementById("playerTwoRacket"))
+const playerOneScoreElem = document.getElementById("playerOneScore")
+const playerTwoScoreElem = document.getElementById("playerTwoScore")
 
-//const ball = new Ball(document.getElementById("ball"))
+function lost() {
+  const rect = ball.rect()
+  return rect.right >= window.innerWidth || rect.left <= 0
+}
 
-const playerOneRacket = new Racket(document.getElementById("playerOnePadell"))
-const playerTwoRacket = new Racket(document.getElementById("playerTwoPadell"))
+function handleLose() {
+  const rect = ball.rect()
+  if (rect.right >= window.innerWidth) {
+    playerOneScoreElem.textContent = parseInt(playerOneScoreElem.textContent) + 15
+  } else {
+    playerTwoScoreElem.textContent = parseInt(playerTwoScoreElem.textContent) + 15
+  }
+  ball.reset()
+  playerTwoRacket.reset()
+}
 
-document.addEventListener(("mousemove"), e => {
-    playerOneRacket.position = e.y / window.innerHeight * 100
+document.addEventListener("mousemove", e => {
+    playerOneRacket.position = (e.y / window.innerHeight) * 100
 })
-
-document.addEventListener("keydown", (e) => {
-    //console.log ("event", e.key);
-    switch (e.key) {
-        case "w":
-        case "ArrowUp":
-            //console.log ("up", e.key);
-            playerTwoRacket.position -= 5
-            break
-        case "s":
-        case "ArrowDown":
-            //console.log ("down", e.key);
-            playerTwoRacket.position += 5
-            break
-    }
-})
-
-let lastTime
-function update(time) {
-    if (lastTime != null) {
-        const delta = time - lastTime
-        /* console.log(delta) */
-        /* console.log(time) */
-    }
-    
-    lastTime = time
-    window.requestAnimationFrame(update)
-} 
 
 window.requestAnimationFrame(update)
 
+let lastTime
+function update(time) {
+  if (lastTime != null) {
+    const delta = time - lastTime
+    ball.update(delta, [playerOneRacket.rect(), playerTwoRacket.rect()])
+    playerTwoRacket.update(delta, ball.y)
+
+    if (lost()) handleLose()
+  }
+
+  lastTime = time
+  window.requestAnimationFrame(update)
+}
