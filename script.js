@@ -1,5 +1,5 @@
-import Ball from "./gamefiles/ball.js"
-import Racket from "./gamefiles/racket.js"
+import Ball from "./gameFiles/ball.js"
+import Racket from "./gameFiles/racket.js"
 
 const ball = new Ball(document.getElementById("ball"))
 const playerOneRacket = new Racket(document.getElementById("playerOneRacket"))
@@ -22,7 +22,6 @@ function handleLose() {
   ball.reset()
   playerTwoRacket.reset()
 }
-
 document.addEventListener("mousemove", e => {
     playerOneRacket.position = (e.y / window.innerHeight) * 100
 })
@@ -38,7 +37,6 @@ function update(time) {
 
     if (lost()) handleLose()
   }
-
   lastTime = time
   window.requestAnimationFrame(update)
 }

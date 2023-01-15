@@ -16,7 +16,6 @@ export default class Ball {
     if (rect.bottom >= window.innerHeight || rect.top <= 0) {
       this.direction.y *= -1
     }
-
     if (paddleRects.some(r => hitBox(r, rect))) {
       this.direction.x *= -1
     }
@@ -35,29 +34,22 @@ export default class Ball {
     }
     this.velocity = INITIAL_VELOCITY
   }
-
   get x() {
     return parseFloat(getComputedStyle(this.ballElem).getPropertyValue("--x"))
   }
-
   set x(value) {
     this.ballElem.style.setProperty("--x", value)
   }
-
   get y() {
     return parseFloat(getComputedStyle(this.ballElem).getPropertyValue("--y"))
   }
-
   set y(value) {
     this.ballElem.style.setProperty("--y", value)
   }
-
   rect() {
     return this.ballElem.getBoundingClientRect()
   }
-
 }
-
 
 function hitBox(rect1, rect2) {
   return (
